@@ -1,0 +1,2 @@
+forex-python
+google-cloud-bigquery
