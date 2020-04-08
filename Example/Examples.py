@@ -17,7 +17,7 @@ sys.path.append(os.getcwd()+"\\Source")
 import bqCost as bqc
 
 # Google Cloud authentication
-credentials, project = google.auth.default()  # Allways print a warning
+credentials = google.auth.default()  # Allways print a warning
 proyecto = ""  # TODO: Insert a Google Cloud project with Big Query Billing permissions.
 
 # SQL QUERY (open data example)
