@@ -8,8 +8,8 @@ V: 1.4
 Revision: 05/04/2020
 """
 # Settable arguments
-bq_cost_TB = 5  # In dolars $
-bq_cost_MB = bq_cost_TB/1048576
+BQ_COST_TB = 5  # In dolars $
+BQ_COST_MB = BQ_COST_TB/1048576
 
 
 # Functions
@@ -25,7 +25,7 @@ def conversor(MB):
     """Use the appropriate unit of data quantity.
     Returns an object with quantity (float) and unit (str)
     """
-    class datos:
+    class Datos:
         def __init__(self, cd, ud):
             self.cd = cd
             self.ud = ud
@@ -44,7 +44,7 @@ def conversor(MB):
         cant_datos = MB
         unidad = 'MB'
 
-    return(datos(cant_datos, unidad))
+    return(Datos(cant_datos, unidad))
 
 
 def dry(q, proyecto, mon='EUR'):
@@ -74,7 +74,7 @@ def dry(q, proyecto, mon='EUR'):
     else:
         MB_bill = math.ceil(MB_pro)  # BQ always round up
 
-    coste = round(MB_bill * bq_cost_MB * tasa('USD', mon), 4)
+    coste = round(MB_bill * BQ_COST_MB * tasa('USD', mon), 4)
 
     print("Esta query procesará {} {} aproximadamente"
           .format(conversor(MB_pro).cd, conversor(MB_pro).ud))
@@ -97,7 +97,7 @@ def query(q, proyecto, mon='EUR'):
 
     MB_bill = round(query_job.total_bytes_billed/(1024**2), 1)
     MB_pro = round(query_job.total_bytes_processed/(1024**2), 1)
-    coste = round(MB_bill * bq_cost_MB * tasa('USD', mon), 4)
+    coste = round(MB_bill * BQ_COST_MB * tasa('USD', mon), 4)
 
     print("Se han afectado {} filas".format(query_job.num_dml_affected_rows))
     print("Se han procesado {} {}"
