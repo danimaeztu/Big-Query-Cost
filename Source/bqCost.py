@@ -4,8 +4,8 @@ Created on Thu Jun 20 13:23:26 2019
 
 @author: danimaeztu.com
 
-V: 1.4
-Revision: 05/04/2020
+V: 1.4.1
+Revision: 2021-05-22
 """
 # Settable arguments
 BQ_COST_TB = 5  # In dolars $
