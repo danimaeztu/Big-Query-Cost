@@ -15,10 +15,13 @@ BQ_COST_MB = BQ_COST_TB/1048576
 # Functions
 def tasa(mon1, mon2):
     """currency exchange rate"""
-    from forex_python.converter import CurrencyRates
-
-    c = CurrencyRates()
-    return(c.get_rate(mon1, mon2))
+    try:
+        from forex_python.converter import CurrencyRates
+    
+        c = CurrencyRates()
+        return(c.get_rate(mon1, mon2))
+    except:
+        return(0.82) # If forex API fails, use an aproximation.
 
 
 def conversor(MB):
