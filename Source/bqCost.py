@@ -4,8 +4,8 @@ Created on Thu Jun 20 13:23:26 2019
 
 @author: danimaeztu.com
 
-V: 1.4.1
-Revision: 2021-05-22
+V: 1.4.2
+Revision: 2021-11-27
 """
 # Settable arguments
 BQ_COST_TB = 5  # In dolars $
@@ -21,7 +21,7 @@ def tasa(mon1, mon2):
         c = CurrencyRates()
         return(c.get_rate(mon1, mon2))
     except:
-        return(0.82) # If forex API fails, use an aproximation.
+        return(0.88) # If forex API fails, use an aproximation. (Only USD-EUR)
 
 
 def conversor(MB):
