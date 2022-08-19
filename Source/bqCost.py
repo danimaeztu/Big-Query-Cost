@@ -21,7 +21,7 @@ def tasa(mon1, mon2):
         c = CurrencyRates()
         return(c.get_rate(mon1, mon2))
     except:
-        return(0.88) # If forex API fails, use an aproximation. (Only USD-EUR)
+        return(1) # If forex API fails, use an aproximation. (Only USD-EUR)
 
 
 def conversor(MB):
